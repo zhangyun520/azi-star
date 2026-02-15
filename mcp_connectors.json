@@ -1,0 +1,713 @@
+{
+  "connectors": [
+    {
+      "id": "github-mcp",
+      "name": "github-mcp",
+      "command": "docker",
+      "args": [
+        "run",
+        "-i",
+        "--rm",
+        "-e",
+        "GITHUB_PERSONAL_ACCESS_TOKEN",
+        "ghcr.io/github/github-mcp-server"
+      ],
+      "env": {
+        "GITHUB_PERSONAL_ACCESS_TOKEN": "${GITHUB_PERSONAL_ACCESS_TOKEN}"
+      },
+      "cwd": "",
+      "timeout_sec": 45,
+      "updated_at": "2026-02-14T22:59:41"
+    },
+    {
+      "id": "github-mcp-npx",
+      "name": "github-mcp-npx",
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-github"
+      ],
+      "env": {
+        "GITHUB_PERSONAL_ACCESS_TOKEN": "${GITHUB_PERSONAL_ACCESS_TOKEN}"
+      },
+      "cwd": "",
+      "timeout_sec": 45,
+      "updated_at": "2026-02-14T23:01:52"
+    },
+    {
+      "id": "awesome-everything",
+      "name": "awesome: everything",
+      "command": "npx.cmd",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-everything"
+      ],
+      "env": {},
+      "cwd": "",
+      "timeout_sec": 45.0,
+      "updated_at": "2026-02-14T23:19:11",
+      "tags": [
+        "awesome",
+        "official",
+        "local"
+      ],
+      "requires_env": [],
+      "source": "awesome-mcp-servers/README-zh.md",
+      "notes": "万能测试服务器，便于快速联调 MCP 协议流。"
+    },
+    {
+      "id": "awesome-sequential-thinking",
+      "name": "awesome: sequential thinking",
+      "command": "npx.cmd",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-sequential-thinking"
+      ],
+      "env": {},
+      "cwd": "",
+      "timeout_sec": 45.0,
+      "updated_at": "2026-02-14T23:19:11",
+      "tags": [
+        "awesome",
+        "reasoning"
+      ],
+      "requires_env": [],
+      "source": "awesome-mcp-servers/README-zh.md",
+      "notes": ""
+    },
+    {
+      "id": "awesome-filesystem",
+      "name": "awesome: filesystem",
+      "command": "npx.cmd",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-filesystem",
+        "."
+      ],
+      "env": {},
+      "cwd": "",
+      "timeout_sec": 45.0,
+      "updated_at": "2026-02-14T23:19:11",
+      "tags": [
+        "awesome",
+        "official",
+        "local",
+        "filesystem"
+      ],
+      "requires_env": [],
+      "source": "awesome-mcp-servers/README-zh.md",
+      "notes": "默认仅开放当前工作目录，必要时改为指定路径白名单。"
+    },
+    {
+      "id": "awesome-memory",
+      "name": "awesome: memory",
+      "command": "npx.cmd",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-memory"
+      ],
+      "env": {},
+      "cwd": "",
+      "timeout_sec": 45.0,
+      "updated_at": "2026-02-14T23:19:11",
+      "tags": [
+        "awesome",
+        "official",
+        "memory",
+        "local"
+      ],
+      "requires_env": [],
+      "source": "awesome-mcp-servers/README-zh.md",
+      "notes": ""
+    },
+    {
+      "id": "awesome-puppeteer",
+      "name": "awesome: puppeteer",
+      "command": "npx.cmd",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-puppeteer"
+      ],
+      "env": {},
+      "cwd": "",
+      "timeout_sec": 45.0,
+      "updated_at": "2026-02-14T23:19:11",
+      "tags": [
+        "awesome",
+        "official",
+        "browser"
+      ],
+      "requires_env": [],
+      "source": "awesome-mcp-servers/README-zh.md",
+      "notes": ""
+    },
+    {
+      "id": "awesome-playwright",
+      "name": "awesome: playwright",
+      "command": "npx.cmd",
+      "args": [
+        "-y",
+        "@playwright/mcp"
+      ],
+      "env": {},
+      "cwd": "",
+      "timeout_sec": 45.0,
+      "updated_at": "2026-02-14T23:19:11",
+      "tags": [
+        "awesome",
+        "browser"
+      ],
+      "requires_env": [],
+      "source": "awesome-mcp-servers/README-zh.md",
+      "notes": ""
+    },
+    {
+      "id": "awesome-fetch",
+      "name": "awesome: fetch",
+      "command": "npx.cmd",
+      "args": [
+        "-y",
+        "@kazuph/mcp-fetch"
+      ],
+      "env": {},
+      "cwd": "",
+      "timeout_sec": 45.0,
+      "updated_at": "2026-02-14T23:19:11",
+      "tags": [
+        "awesome",
+        "web",
+        "fetch"
+      ],
+      "requires_env": [],
+      "source": "awesome-mcp-servers/README-zh.md",
+      "notes": ""
+    },
+    {
+      "id": "awesome-brave-search",
+      "name": "awesome: brave search",
+      "command": "npx.cmd",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-brave-search"
+      ],
+      "env": {
+        "BRAVE_API_KEY": "${BRAVE_API_KEY}"
+      },
+      "cwd": "",
+      "timeout_sec": 45.0,
+      "updated_at": "2026-02-14T23:19:11",
+      "tags": [
+        "awesome",
+        "official",
+        "search",
+        "cloud"
+      ],
+      "requires_env": [
+        "BRAVE_API_KEY"
+      ],
+      "source": "awesome-mcp-servers/README-zh.md",
+      "notes": ""
+    },
+    {
+      "id": "awesome-google-maps",
+      "name": "awesome: google maps",
+      "command": "npx.cmd",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-google-maps"
+      ],
+      "env": {
+        "GOOGLE_MAPS_API_KEY": "${GOOGLE_MAPS_API_KEY}"
+      },
+      "cwd": "",
+      "timeout_sec": 45.0,
+      "updated_at": "2026-02-14T23:19:11",
+      "tags": [
+        "awesome",
+        "official",
+        "maps",
+        "cloud"
+      ],
+      "requires_env": [
+        "GOOGLE_MAPS_API_KEY"
+      ],
+      "source": "awesome-mcp-servers/README-zh.md",
+      "notes": ""
+    },
+    {
+      "id": "awesome-gitlab",
+      "name": "awesome: gitlab",
+      "command": "npx.cmd",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-gitlab"
+      ],
+      "env": {
+        "GITLAB_PERSONAL_ACCESS_TOKEN": "${GITLAB_PERSONAL_ACCESS_TOKEN}",
+        "GITLAB_API_URL": "${GITLAB_API_URL}"
+      },
+      "cwd": "",
+      "timeout_sec": 45.0,
+      "updated_at": "2026-02-14T23:19:11",
+      "tags": [
+        "awesome",
+        "official",
+        "gitlab",
+        "cloud"
+      ],
+      "requires_env": [
+        "GITLAB_PERSONAL_ACCESS_TOKEN"
+      ],
+      "source": "awesome-mcp-servers/README-zh.md",
+      "notes": ""
+    },
+    {
+      "id": "awesome-slack",
+      "name": "awesome: slack",
+      "command": "npx.cmd",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-slack"
+      ],
+      "env": {
+        "SLACK_BOT_TOKEN": "${SLACK_BOT_TOKEN}"
+      },
+      "cwd": "",
+      "timeout_sec": 45.0,
+      "updated_at": "2026-02-14T23:19:11",
+      "tags": [
+        "awesome",
+        "official",
+        "slack",
+        "cloud"
+      ],
+      "requires_env": [
+        "SLACK_BOT_TOKEN"
+      ],
+      "source": "awesome-mcp-servers/README-zh.md",
+      "notes": ""
+    },
+    {
+      "id": "awesome-sentry",
+      "name": "awesome: sentry",
+      "command": "npx.cmd",
+      "args": [
+        "-y",
+        "@sentry/mcp-server"
+      ],
+      "env": {
+        "SENTRY_AUTH_TOKEN": "${SENTRY_AUTH_TOKEN}",
+        "SENTRY_ORG_SLUG": "${SENTRY_ORG_SLUG}"
+      },
+      "cwd": "",
+      "timeout_sec": 45.0,
+      "updated_at": "2026-02-14T23:19:11",
+      "tags": [
+        "awesome",
+        "monitoring",
+        "cloud"
+      ],
+      "requires_env": [
+        "SENTRY_AUTH_TOKEN"
+      ],
+      "source": "awesome-mcp-servers/README-zh.md",
+      "notes": ""
+    },
+    {
+      "id": "awesome-postgres",
+      "name": "awesome: postgres",
+      "command": "npx.cmd",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-postgres"
+      ],
+      "env": {
+        "DATABASE_URL": "${DATABASE_URL}"
+      },
+      "cwd": "",
+      "timeout_sec": 45.0,
+      "updated_at": "2026-02-14T23:19:11",
+      "tags": [
+        "awesome",
+        "official",
+        "db",
+        "cloud"
+      ],
+      "requires_env": [
+        "DATABASE_URL"
+      ],
+      "source": "awesome-mcp-servers/README-zh.md",
+      "notes": ""
+    },
+    {
+      "id": "awesome-sqlite",
+      "name": "awesome: sqlite",
+      "command": "npx.cmd",
+      "args": [
+        "-y",
+        "mcp-sqlite-tools"
+      ],
+      "env": {
+        "SQLITE_DB_PATH": "${SQLITE_DB_PATH}"
+      },
+      "cwd": "",
+      "timeout_sec": 45.0,
+      "updated_at": "2026-02-14T23:19:11",
+      "tags": [
+        "awesome",
+        "db",
+        "local"
+      ],
+      "requires_env": [
+        "SQLITE_DB_PATH"
+      ],
+      "source": "awesome-mcp-servers/README-zh.md",
+      "notes": ""
+    },
+    {
+      "id": "awesome-linear",
+      "name": "awesome: linear",
+      "command": "npx.cmd",
+      "args": [
+        "-y",
+        "@tacticlaunch/mcp-linear"
+      ],
+      "env": {
+        "LINEAR_API_KEY": "${LINEAR_API_KEY}"
+      },
+      "cwd": "",
+      "timeout_sec": 45.0,
+      "updated_at": "2026-02-14T23:19:11",
+      "tags": [
+        "awesome",
+        "pm",
+        "cloud"
+      ],
+      "requires_env": [
+        "LINEAR_API_KEY"
+      ],
+      "source": "awesome-mcp-servers/README-zh.md",
+      "notes": ""
+    },
+    {
+      "id": "awesome-ragdocs",
+      "name": "awesome: ragdocs",
+      "command": "npx.cmd",
+      "args": [
+        "-y",
+        "@hannesrudolph/mcp-ragdocs"
+      ],
+      "env": {},
+      "cwd": "",
+      "timeout_sec": 45.0,
+      "updated_at": "2026-02-14T23:19:11",
+      "tags": [
+        "awesome",
+        "rag",
+        "knowledge"
+      ],
+      "requires_env": [],
+      "source": "awesome-mcp-servers/README-zh.md",
+      "notes": ""
+    },
+    {
+      "id": "awesome-ragie",
+      "name": "awesome: ragie",
+      "command": "npx.cmd",
+      "args": [
+        "-y",
+        "@ragieai/mcp-server"
+      ],
+      "env": {
+        "RAGIE_API_KEY": "${RAGIE_API_KEY}"
+      },
+      "cwd": "",
+      "timeout_sec": 45.0,
+      "updated_at": "2026-02-14T23:19:11",
+      "tags": [
+        "awesome",
+        "rag",
+        "cloud"
+      ],
+      "requires_env": [
+        "RAGIE_API_KEY"
+      ],
+      "source": "awesome-mcp-servers/README-zh.md",
+      "notes": ""
+    },
+    {
+      "id": "awesome-chart",
+      "name": "awesome: chart",
+      "command": "npx.cmd",
+      "args": [
+        "-y",
+        "@antv/mcp-server-chart"
+      ],
+      "env": {},
+      "cwd": "",
+      "timeout_sec": 45.0,
+      "updated_at": "2026-02-14T23:19:11",
+      "tags": [
+        "awesome",
+        "visualization"
+      ],
+      "requires_env": [],
+      "source": "awesome-mcp-servers/README-zh.md",
+      "notes": ""
+    },
+    {
+      "id": "awesome-youtube-transcript",
+      "name": "awesome: youtube transcript",
+      "command": "npx.cmd",
+      "args": [
+        "-y",
+        "@kimtaeyoon83/mcp-server-youtube-transcript"
+      ],
+      "env": {},
+      "cwd": "",
+      "timeout_sec": 45.0,
+      "updated_at": "2026-02-14T23:19:11",
+      "tags": [
+        "awesome",
+        "media"
+      ],
+      "requires_env": [],
+      "source": "awesome-mcp-servers/README-zh.md",
+      "notes": ""
+    },
+    {
+      "id": "awesome-supabase",
+      "name": "awesome: supabase",
+      "command": "npx.cmd",
+      "args": [
+        "-y",
+        "@joshuarileydev/supabase-mcp-server"
+      ],
+      "env": {
+        "SUPABASE_URL": "${SUPABASE_URL}",
+        "SUPABASE_SERVICE_ROLE_KEY": "${SUPABASE_SERVICE_ROLE_KEY}"
+      },
+      "cwd": "",
+      "timeout_sec": 45.0,
+      "updated_at": "2026-02-14T23:19:11",
+      "tags": [
+        "awesome",
+        "db",
+        "cloud"
+      ],
+      "requires_env": [
+        "SUPABASE_URL",
+        "SUPABASE_SERVICE_ROLE_KEY"
+      ],
+      "source": "awesome-mcp-servers/README-zh.md",
+      "notes": ""
+    },
+    {
+      "id": "awesome-firebase",
+      "name": "awesome: firebase",
+      "command": "npx.cmd",
+      "args": [
+        "-y",
+        "@gannonh/firebase-mcp"
+      ],
+      "env": {
+        "GOOGLE_APPLICATION_CREDENTIALS": "${GOOGLE_APPLICATION_CREDENTIALS}"
+      },
+      "cwd": "",
+      "timeout_sec": 45.0,
+      "updated_at": "2026-02-14T23:19:11",
+      "tags": [
+        "awesome",
+        "db",
+        "cloud"
+      ],
+      "requires_env": [
+        "GOOGLE_APPLICATION_CREDENTIALS"
+      ],
+      "source": "awesome-mcp-servers/README-zh.md",
+      "notes": ""
+    },
+    {
+      "id": "awesome-openapi",
+      "name": "awesome: openapi",
+      "command": "npx.cmd",
+      "args": [
+        "-y",
+        "openapi-mcp-server"
+      ],
+      "env": {},
+      "cwd": "",
+      "timeout_sec": 45.0,
+      "updated_at": "2026-02-14T23:19:11",
+      "tags": [
+        "awesome",
+        "api"
+      ],
+      "requires_env": [],
+      "source": "awesome-mcp-servers/README-zh.md",
+      "notes": ""
+    },
+    {
+      "id": "awesome-swagger",
+      "name": "awesome: swagger",
+      "command": "npx.cmd",
+      "args": [
+        "-y",
+        "mcp-swagger-server"
+      ],
+      "env": {},
+      "cwd": "",
+      "timeout_sec": 45.0,
+      "updated_at": "2026-02-14T23:19:11",
+      "tags": [
+        "awesome",
+        "api"
+      ],
+      "requires_env": [],
+      "source": "awesome-mcp-servers/README-zh.md",
+      "notes": ""
+    },
+    {
+      "id": "awesome-google-drive",
+      "name": "awesome: google drive",
+      "command": "npx.cmd",
+      "args": [
+        "-y",
+        "mcp-google-drive"
+      ],
+      "env": {
+        "GOOGLE_CLIENT_ID": "${GOOGLE_CLIENT_ID}",
+        "GOOGLE_CLIENT_SECRET": "${GOOGLE_CLIENT_SECRET}",
+        "GOOGLE_REFRESH_TOKEN": "${GOOGLE_REFRESH_TOKEN}"
+      },
+      "cwd": "",
+      "timeout_sec": 45.0,
+      "updated_at": "2026-02-14T23:19:11",
+      "tags": [
+        "awesome",
+        "drive",
+        "cloud"
+      ],
+      "requires_env": [
+        "GOOGLE_CLIENT_ID",
+        "GOOGLE_CLIENT_SECRET",
+        "GOOGLE_REFRESH_TOKEN"
+      ],
+      "source": "awesome-mcp-servers/README-zh.md",
+      "notes": ""
+    },
+    {
+      "id": "awesome-google-workspace",
+      "name": "awesome: google workspace",
+      "command": "npx.cmd",
+      "args": [
+        "-y",
+        "mcp-server-google-workspace"
+      ],
+      "env": {
+        "GOOGLE_CLIENT_ID": "${GOOGLE_CLIENT_ID}",
+        "GOOGLE_CLIENT_SECRET": "${GOOGLE_CLIENT_SECRET}",
+        "GOOGLE_REFRESH_TOKEN": "${GOOGLE_REFRESH_TOKEN}"
+      },
+      "cwd": "",
+      "timeout_sec": 45.0,
+      "updated_at": "2026-02-14T23:19:11",
+      "tags": [
+        "awesome",
+        "gmail",
+        "calendar",
+        "drive",
+        "cloud"
+      ],
+      "requires_env": [
+        "GOOGLE_CLIENT_ID",
+        "GOOGLE_CLIENT_SECRET",
+        "GOOGLE_REFRESH_TOKEN"
+      ],
+      "source": "awesome-mcp-servers/README-zh.md",
+      "notes": ""
+    },
+    {
+      "id": "awesome-public-ui",
+      "name": "awesome: public ui",
+      "command": "npx.cmd",
+      "args": [
+        "-y",
+        "@public-ui/mcp"
+      ],
+      "env": {},
+      "cwd": "",
+      "timeout_sec": 45.0,
+      "updated_at": "2026-02-14T23:19:11",
+      "tags": [
+        "awesome",
+        "ui"
+      ],
+      "requires_env": [],
+      "source": "awesome-mcp-servers/README-zh.md",
+      "notes": ""
+    },
+    {
+      "id": "awesome-codemirror",
+      "name": "awesome: codemirror",
+      "command": "npx.cmd",
+      "args": [
+        "-y",
+        "@marimo-team/codemirror-mcp"
+      ],
+      "env": {},
+      "cwd": "",
+      "timeout_sec": 45.0,
+      "updated_at": "2026-02-14T23:19:11",
+      "tags": [
+        "awesome",
+        "editor",
+        "local"
+      ],
+      "requires_env": [],
+      "source": "awesome-mcp-servers/README-zh.md",
+      "notes": ""
+    },
+    {
+      "id": "awesome-multiverse",
+      "name": "awesome: multiverse",
+      "command": "npx.cmd",
+      "args": [
+        "-y",
+        "@lamemind/mcp-server-multiverse"
+      ],
+      "env": {},
+      "cwd": "",
+      "timeout_sec": 45.0,
+      "updated_at": "2026-02-14T23:19:11",
+      "tags": [
+        "awesome",
+        "middleware"
+      ],
+      "requires_env": [],
+      "source": "awesome-mcp-servers/README-zh.md",
+      "notes": ""
+    },
+    {
+      "id": "awesome-time",
+      "name": "awesome: time",
+      "command": "npx.cmd",
+      "args": [
+        "-y",
+        "time-mcp"
+      ],
+      "env": {},
+      "cwd": "",
+      "timeout_sec": 45.0,
+      "updated_at": "2026-02-14T23:19:11",
+      "tags": [
+        "awesome",
+        "utility",
+        "local"
+      ],
+      "requires_env": [],
+      "source": "awesome-mcp-servers/README-zh.md",
+      "notes": ""
+    }
+  ]
+}

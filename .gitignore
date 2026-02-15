@@ -1,0 +1,55 @@
+# =========================
+# Secrets / local overrides
+# =========================
+.env
+.env.*
+!.env.example
+*.secret
+*.private.json
+llm_config.local.json
+api_connectors.local.json
+mcp_connectors.local.json
+
+# =========================
+# Python cache / test cache
+# =========================
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# =========================
+# Runtime state / logs / DB
+# =========================
+*.pid
+*.log
+*.jsonl
+*.db
+*.db-shm
+*.db-wal
+resident_output/
+
+azi_state.json
+brain_state.json
+llm_state.json
+self_opt_state.json
+file_feed_state.json
+social_state.json
+vscode_observer_state.json
+
+# =========================
+# Cognitive v0 runtime data
+# =========================
+cognitive_os_v0/data/*.jsonl
+cognitive_os_v0/data/replay_report.json
+cognitive_os_v0/data/stats.json
+
+# =========================
+# Local machine / large dirs
+# =========================
+代码库/
+Shu/
+课程/
+批量改格式_20250520223422/
+统计数据夹/
+sm18-lazy-package-1.3.1/
+*.zip

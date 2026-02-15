@@ -1,0 +1,152 @@
+{
+  "mode": "api",
+  "api_live_enabled": false,
+  "ollama": {
+    "host": "http://127.0.0.1:11434",
+    "model": "qwen3:8b",
+    "timeout_sec": 45
+  },
+  "api": {
+    "enabled": true,
+    "endpoint": "https://api.openai.com/v1",
+    "model": "gpt-4.1-mini",
+    "key_env": "OPENAI_API_KEY",
+    "operation": "chat/completions",
+    "timeout_sec": 40,
+    "retry_count": 1,
+    "retry_backoff_sec": 0.4
+  },
+  "providers": {
+    "shallow_default": {
+      "provider": "api",
+      "enabled": true,
+      "endpoint": "https://api.openai.com/v1",
+      "model": "gpt-4.1-mini",
+      "key_env": "OPENAI_API_KEY",
+      "operation": "chat/completions",
+      "timeout_sec": 25,
+      "retry_count": 1,
+      "retry_backoff_sec": 0.4
+    },
+    "medium_default": {
+      "provider": "api",
+      "enabled": true,
+      "endpoint": "https://api.openai.com/v1",
+      "model": "gpt-4.1",
+      "key_env": "OPENAI_API_KEY",
+      "operation": "chat/completions",
+      "timeout_sec": 45,
+      "retry_count": 1,
+      "retry_backoff_sec": 0.6
+    },
+    "deep_default": {
+      "provider": "api",
+      "enabled": true,
+      "endpoint": "https://api.openai.com/v1",
+      "model": "gpt-4.1",
+      "key_env": "OPENAI_API_KEY",
+      "operation": "chat/completions",
+      "timeout_sec": 70,
+      "retry_count": 2,
+      "retry_backoff_sec": 0.8
+    },
+    "dream_default": {
+      "provider": "api",
+      "enabled": true,
+      "endpoint": "https://api.openai.com/v1",
+      "model": "gpt-4.1",
+      "key_env": "OPENAI_API_KEY",
+      "operation": "chat/completions",
+      "timeout_sec": 70,
+      "retry_count": 2,
+      "retry_backoff_sec": 0.8
+    },
+    "coder_default": {
+      "provider": "api",
+      "enabled": true,
+      "endpoint": "https://api.openai.com/v1",
+      "model": "gpt-4.1",
+      "key_env": "OPENAI_API_KEY",
+      "operation": "chat/completions",
+      "timeout_sec": 300,
+      "retry_count": 2,
+      "retry_backoff_sec": 0.8
+    },
+    "zhipu_glm": {
+      "provider": "zhipu",
+      "enabled": false,
+      "endpoint": "https://open.bigmodel.cn/api/paas/v4",
+      "model": "glm-4-flash",
+      "key_env": "ZHIPU_API_KEY",
+      "timeout_sec": 45,
+      "retry_count": 1,
+      "retry_backoff_sec": 0.8
+    },
+    "ollama_qwen": {
+      "provider": "ollama",
+      "host": "http://127.0.0.1:11434",
+      "model": "qwen3:8b",
+      "timeout_sec": 30
+    }
+  },
+  "provider_groups": {
+    "fast_chain": [
+      "shallow_default"
+    ],
+    "dream_chain": [
+      "dream_default",
+      "deep_default"
+    ],
+    "deep_chain": [
+      "deep_default",
+      "medium_default"
+    ],
+    "coder_chain": [
+      "coder_default",
+      "deep_default"
+    ],
+    "shallow_chain": [
+      "shallow_default",
+      "ollama_qwen"
+    ],
+    "medium_chain": [
+      "medium_default",
+      "shallow_default"
+    ]
+  },
+  "routing_policy": {
+    "task_preferences": {
+      "dream": [
+        "dream_chain",
+        "deep_chain"
+      ]
+    },
+    "task_skill_packs": {
+      "dream": [
+        "algorithmic-art",
+        "generative-art",
+        "canvas-design",
+        "theme-factory",
+        "artifacts-builder",
+        "web-artifacts-builder",
+        "slack-gif-creator",
+        "imagegen",
+        "sora",
+        "speech",
+        "transcribe",
+        "music-generation",
+        "code-to-music"
+      ]
+    },
+    "work_memory_strength": "balanced"
+  },
+  "deep_reflection": {
+    "enabled": true,
+    "every_n_cycles": 240,
+    "provider": "api",
+    "provider_group": "deep_chain",
+    "api_model": "gpt-4.1",
+    "key_env": "OPENAI_API_KEY",
+    "timeout_sec": 120
+  }
+}
