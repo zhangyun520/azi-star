@@ -43,9 +43,8 @@ git push -u origin main
 ## 5) 发布前最后检查
 
 ```powershell
-rg -n "sk-[A-Za-z0-9]{10,}|Bearer\\s+[A-Za-z0-9._-]{20,}|api\\.vectorengine\\.ai|VECTORENGINE_API_KEY" `
+rg -n "sk-[A-Za-z0-9]{10,}|Bearer\\s+[A-Za-z0-9._-]{20,}|your_private_endpoint|YOUR_PRIVATE_API_KEY" `
   --glob "!代码库/**" --glob "!Shu/**" --glob "!课程/**" --glob "!resident_output/**"
 ```
 
 如果仍有命中，逐条确认是否为公开示例文本，而不是私有凭据或私有 endpoint。
-
